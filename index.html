@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money Manager</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Login Page -->
+    <div id="login-page" class="page">
+      <h1>Money Manager</h1>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+      </div>
+      <button onclick="login()">Login</button>
+    </div>
+    
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="page hidden">
+      <h1>Dashboard</h1>
+      <div class="dashboard-grid">
+        <div class="left-panel">
+          <div class="overview">
+            <p>Total Income: $<span id="total-income">0.00</span></p>
+            <p>Total Expenses: $<span id="total-expenses">0.00</span></p>
+            <p>Balance: $<span id="balance">0.00</span></p>
+          </div>
+          <button onclick="showAddTransaction()">Add Transaction</button>
+          <h2>Recent Transactions</h2>
+          <ul id="transaction-list"></ul>
+        </div>
+        <div class="right-panel">
+          <canvas id="expense-chart" width="400" height="400"></canvas>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Add Transaction Page -->
+    <div id="add-transaction-page" class="page hidden">
+      <h1>Add Transaction</h1>
+      <div class="form-group">
+        <label for="type">Type:</label>
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+      </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <input type="text" id="category" placeholder="Enter category">
+      </div>
+      <button onclick="addTransaction()">Add Transaction</button>
+      <button onclick="showDashboard()">Back to Dashboard</button>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+  <script src="script2.js"></script>
+</body>
+</html>
